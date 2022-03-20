@@ -13,13 +13,11 @@ export function MovieDetails() {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-            fetch(`${API}/movies/${id}`, {method: "GET"})
-            .then(response => response.json())
-            .then(data => setMovie(data))
-          // eslint-disable-next-line react-hooks/exhaustive-deps
-              }
-            ,[]
-            )
+    fetch(`${API}/movies/${id}`, { method: "GET" })
+      .then((response) => response.json())
+      .then((data) => setMovie(data));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   if(!movie) return <NotFoundPage/>
   
