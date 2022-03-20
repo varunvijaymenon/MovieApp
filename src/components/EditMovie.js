@@ -54,6 +54,7 @@ export default function EditMovie() {
 
     useEffect(() => {
       movieDetails()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
   
   
@@ -85,6 +86,7 @@ function EditMovieForm ({movie, id}) {
         summary: values.Summary,
         trailer: values.Trailer
       }
+
       fetch(`${API}/movies/${id}`, {method: "PUT", body: JSON.stringify(newMovieINFO), headers: {'Content-Type': 'application/json'}})
       .then(response => response.json())
       .then(() => navigate('/movies'))

@@ -12,10 +12,14 @@ export function MovieDetails() {
   const navigate = useNavigate();
   const [movie, setMovie] = useState([]);
 
-  useEffect(() => 
+  useEffect(() => {
             fetch(`${API}/movies/${id}`, {method: "GET"})
             .then(response => response.json())
-            .then(data => setMovie(data)),[])
+            .then(data => setMovie(data))
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+              }
+            ,[]
+            )
 
   if(!movie) return <NotFoundPage/>
   
